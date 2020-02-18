@@ -1,4 +1,4 @@
-//require the readline module
+//requir the readline module
 const readline = require('readline-sync');
 
 //variable declarations
