@@ -10,6 +10,8 @@ let courses = ['CSC141','CSC142','CSC240','CSC241']
 let letterGrades = ['A','A-','B+','B','B-','C+','C','C-','D+','D','F']
 let anotherStudent
 let averages = new Array()
+exports.averageScores = averages;
+exports.nameList = names;
 
 
 //do-while loop to get all input
