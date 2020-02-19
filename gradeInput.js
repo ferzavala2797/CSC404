@@ -64,7 +64,7 @@ function doAnother(){
           return anotherStudent
 }
 
-console.log(names)
+console.log(`\nNames entered: ${names}`)
 
 //function to convert letter grades
 function convertGrades(grades){
@@ -118,8 +118,6 @@ function convertGrades(grades){
   }
 }
 
-console.log(grades)
-
 //function to get average of grades
 function averageGrades(grades){
   var sum = 0
@@ -134,4 +132,4 @@ function averageGrades(grades){
   }
 }
 
-console.log(averages)
+console.log(`Students' GPAs: ${averages}`)
