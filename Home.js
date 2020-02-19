@@ -9,3 +9,4 @@ displayInfo = () => {
 console.log(displayInfo())
 
 input = require('./gradeInput')
+qualifiedStudents = require('./qualifiedStudents')
