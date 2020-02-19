@@ -59,7 +59,7 @@ function getInput(){
 
 //function to ask if the user wants to add another student
 function doAnother(){
-          anotherStudent = readline.question("Would you like to add another student?(y/Y): ")
+          anotherStudent = readline.question("Would you like to add another student?(y/n): ")
           anotherStudent = anotherStudent.toLowerCase()
           return anotherStudent
 }
