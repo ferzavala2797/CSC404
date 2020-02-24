@@ -64,7 +64,7 @@ function doAnother(){
           return anotherStudent
 }
 
-console.log(`\nNames entered: ${names}`)
+console.log(names)
 
 //function to convert letter grades
 function convertGrades(grades){
@@ -118,6 +118,10 @@ function convertGrades(grades){
   }
 }
 
+console.log(grades)
+
+
+
 //function to get average of grades
 function averageGrades(grades){
   var sum = 0
@@ -125,11 +129,22 @@ function averageGrades(grades){
   for(var i = 0; i < grades.length; i++){
       sum += grades[i]
       if((i+1) % 4 == 0){
-        fixedAvg = (sum/4).toFixed(1)
+        preFixedAvg = (sum/4);
+        fixedAvg = shortenDecimal(preFixedAvg, 1);
         averages.push(fixedAvg)
         sum = 0
       }
   }
 }
 
-console.log(`Students' GPAs: ${averages}`)
+//function to shorten decimal to 1 place.
+function shortenDecimal(value, digit) 
+{
+  var multiplier = Math.pow(10, digit),
+      adjustedValue = value * multiplier,
+      truncatedNum = Math[adjustedValue < 0 ? 'ceil' : 'floor'](adjustedValue);
+
+  return truncatedNum / multiplier;
+}
+
+console.log(averages)
