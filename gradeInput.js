@@ -143,11 +143,11 @@ function shortenDecimal(value, digit)
   var multiplier = Math.pow(10, digit);
         adjustedValue = value * multiplier;
         if(adjustedValue < 0)
-            truncatedNum = Math.ceil(adjustedValue);
+            shortenedNum = Math.ceil(adjustedValue);
         else
-            truncatedNum = Math.floor(adjustedValue);
+            shortenedNum = Math.floor(adjustedValue);
 
-    return truncatedNum / multiplier;
+    return shortenedNum / multiplier;
 }
 
 console.log(averages)
