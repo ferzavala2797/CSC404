@@ -140,11 +140,14 @@ function averageGrades(grades){
 //function to shorten decimal to 1 place.
 function shortenDecimal(value, digit) 
 {
-  var multiplier = Math.pow(10, digit),
-      adjustedValue = value * multiplier,
-      truncatedNum = Math[adjustedValue < 0 ? 'ceil' : 'floor'](adjustedValue);
+  var multiplier = Math.pow(10, digit);
+        adjustedValue = value * multiplier;
+        if(adjustedValue < 0)
+            truncatedNum = Math.ceil(adjustedValue);
+        else
+            truncatedNum = Math.floor(adjustedValue);
 
-  return truncatedNum / multiplier;
+    return truncatedNum / multiplier;
 }
 
 console.log(averages)
