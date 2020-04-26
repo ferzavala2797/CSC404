@@ -1,0 +1,6 @@
+<h1>Qualified Students</h1>
+<p>If you meet the minimum requirements of a GPA of 2.5 your name will be listed below.</p>
+<% allUsers.forEach(user => {%> 
+    <h5> <%= user.name %>  </h5>     
+    <h5><span><%= user.grade %> </h5>  </span> 
+<% }) %>

@@ -1,36 +1,5 @@
-<div class="container">
-  <div class="col-sm-6">
-    <img src="images/Transparent Wcu.png" alt="">
-  </div>
-  <div class="col-sm-6">
-    <h1 class="title">Grade Input Calculator</h1>
-    <p>Please enter your CSC grades below, only use letter grade format.  </p>
-    <p><b>EX: A, A-, B+ F</b>
-    </p>
-    
-    <!--Enter a title above the offered grades.-->
-
-    <form action="/contact" method="post">
-    <label for="CSC 141">CSC 141</label>
-    <input type="grade" name="CSC141" value="">
-      <br>
-      <label for="CSC142">CSC 142</label>
-      <input type="grade" name="CSC142" value="">
-      <br>
-      <label for="email">CSC 240</label>
-      <input type="grade" name="CSC240" value="">
-      <br>
-      <label for="email">CSC 241</label>
-      <input type="grade" name="CSC241" value="">
-      <br>
-      <input class="button" type="submit" value="Submit Grade">
-  
-    </form>
-
-
-
-
-
-    
-  </div>
-</div>
+<h1>Our Products</h1>
+<% offeredCourses.forEach(course => {%> 
+    <h5> <%= course.title %> </h5>
+    <span>$ <%= course.price %> </span>
+<% }) %>
