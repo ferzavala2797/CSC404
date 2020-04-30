@@ -44,6 +44,7 @@ MongoDB.connect(dbURL, {useUnifiedTopology: true,
 //convert letter grade
 function convertGrade(grade){
     for(var i = 0; i < grade.length; i++){
+      grade[i]=grade[i].toUpperCase();
       switch(grade[i]){
   
         case 'A':
@@ -91,8 +92,14 @@ function convertGrade(grade){
           break
       }
     }
+    return grade;
   }
-
+  function wait(ms){
+    var d = new Date();
+    var d2 = null;
+    do{d2 = new Date();}
+    while(d2-d < ms);
+  }
 /*
 var users = [
     {
@@ -135,11 +142,70 @@ router.addUsers = (req, res) => {
     //var newUserCSC142 = req.body.CSC142; //csc 142 grade
     //var newUserCSC240 = req.body.CSC240 ;//csc 240 grade
     //var newUserCSC241 = req.body.CSC241 ;//CSC 241 grade
+    var temp = 0;
+    newUsergrade.forEach(letter => {
+      letter = letter.toUpperCase();
+      switch(letter){
+  
+        case 'A':
+          letter = 4.0
+          break
+  
+        case 'A-':
+          letter = 3.7
+          break
+  
+        case 'B+':
+          letter = 3.3
+          break
+  
+        case 'B':
+          letter = 3.0
+          break
+  
+        case 'B-':
+          letter = 2.7
+          break
+  
+        case 'C+':
+          letter = 2.3
+          break
+  
+        case 'C':
+          letter = 2.0
+          break
+  
+        case 'C-':
+          letter = 1.7
+          break
+  
+        case 'D+':
+          letter = 1.3
+          break
+  
+        case 'D':
+          letter = 1.0
+          break
+  
+        case 'F':
+          letter = 0.0
+          break
+      }
+      temp += letter;
+    });
+
+    var valid= false;
+    
+    if(temp/4 >= 2.5){
+      valid = true;
+    }else{
+      vaild = false;
+    }
 
 
     /*   Add your code for adding one user to the "users" */
     /*   collection in the usersdb database               */
-    col.insertOne({name: newUserName, grade: newUsergrade}, function(err, r) {
+    col.insertOne({name: newUserName, grade: newUsergrade, isValid: valid}, function(err, r) {
         test.equal(null, err);
         test.equal(1, r.insertedCount);
         col.find({}).toArray( (err, userData) => {
@@ -169,3 +235,5 @@ router.postSignUpForm = (req, res) => {
 };
 
 module.exports = router;
+
+
